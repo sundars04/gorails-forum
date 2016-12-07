@@ -16,6 +16,7 @@ gem 'bootstrap-sass'
 gem 'record_tag_helper', '~> 1.0'
 gem 'sucker_punch', '~> 2.0', '>= 2.0.2'
 gem 'ransack'
+gem 'local_time', '~> 1.0', '>= 1.0.3'
 
 group :development, :test do
   gem 'byebug', platform: :mri
