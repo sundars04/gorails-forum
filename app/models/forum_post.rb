@@ -15,4 +15,12 @@ class ForumPost < ApplicationRecord
   belongs_to :user
 
   validates :body, presence: true
+  def send_notifications!
+    # Identify all the unique users in this thread
+    users = forum_thread.users.uniq - [user]
+    # Send an email to each of those users
+    users.each do |user|
+      NotificationMailer.forum_post_notification(user, self).deliver_later
+    end    
+  end
 end

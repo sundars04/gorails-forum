@@ -14,6 +14,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'record_tag_helper', '~> 1.0'
+gem 'sucker_punch', '~> 2.0', '>= 2.0.2'
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
