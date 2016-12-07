@@ -1,0 +1,10 @@
+<div class="container">
+  <h1><%= @forum_thread.subject %></h1>  
+  
+  
+  <%= render @forum_thread.forum_posts %>
+
+  <hr />
+  <%= render partial: "forum_posts/form" %>
+    
+</div>
