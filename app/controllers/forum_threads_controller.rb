@@ -2,7 +2,8 @@ class ForumThreadsController < ApplicationController
   before_action :authenticate_user!, except:[:index, :show]
   before_action :set_forum_thread, except: [:index, :new, :create]
   def index
-    @forum_threads = ForumThread.all    
+    @q = ForumThread.search(params[:q])
+    @forum_threads = @q.result(distinct:true)
   end
 
   def show

@@ -15,6 +15,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'record_tag_helper', '~> 1.0'
 gem 'sucker_punch', '~> 2.0', '>= 2.0.2'
+gem 'ransack'
 
 group :development, :test do
   gem 'byebug', platform: :mri
