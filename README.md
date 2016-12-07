@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple forum with nested attributes. Users can log in and create Forum Threads with posts.
+The forum thread has a nested post. This example also uses ransack search for body and comments(subject and body)
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - 2.3.0
 
-* System dependencies
+* Rails version - 5.0.0.1
 
-* Configuration
+* Additional gems used - Devise, bootstrap-sass, record-tag helper(for div_for helper), 
+	ransack(for search), local_time(for browser local time).
 
-* Database creation
+* Database - sqlite3
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* Deployment instructions - git clone, bundle, db:migrate and run server.
 
 * ...
