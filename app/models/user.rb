@@ -17,6 +17,10 @@
 #  updated_at             :datetime         not null
 #  first_name             :string
 #  last_name              :string
+#  avatar_file_name       :string
+#  avatar_content_type    :string
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
 #
 # Indexes
 #
@@ -32,6 +36,9 @@ class User < ApplicationRecord
   has_many :forum_threads
   has_many :forum_posts
   has_many :likes
+
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   def name
     "#{first_name} #{last_name}"

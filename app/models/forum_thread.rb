@@ -22,4 +22,7 @@ class ForumThread < ApplicationRecord
   validates :subject, presence: true
   validates_associated :forum_posts
 
+
+  
+
 end

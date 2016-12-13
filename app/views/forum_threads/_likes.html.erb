@@ -1,5 +1,14 @@
 <% if user_signed_in? && current_user.likes?(forum_thread) %>
-  <%= link_to "Unlike", forum_thread_like_path(forum_thread), method: :delete, remote: true%>
+  <%= link_to forum_thread_like_path(forum_thread), method: :delete, remote: true do %>
+    <span class="glyphicon glyphicon-thumbs-up"></span>
+  <% end -%>
 <% else %>
-  <%= link_to "Like", forum_thread_like_path(forum_thread), method: :post, remote: true%>
+  <%= link_to forum_thread_like_path(forum_thread), method: :post, remote: true do %>
+    <span class="glyphicon glyphicon-thumbs-down"></span>
+  <% end -%>
+<% end -%>
+
+<%= @forum_thread.likes.count%>
+<% @forum_thread.likes.each do |like| %>
+  <%= image_tag like.user.avatar.url, width: 20, :style => "border-radius: 30%" %>  
 <% end -%>
