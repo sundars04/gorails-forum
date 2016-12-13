@@ -8,7 +8,7 @@
 #  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
-#  sign_in_count          :integer          default("0"), not null
+#  sign_in_count          :integer          default(0), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string
@@ -31,8 +31,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :forum_threads
   has_many :forum_posts
+  has_many :likes
 
   def name
     "#{first_name} #{last_name}"
+  end
+
+  def likes?(forum_thread)
+    forum_thread.likes.where(user_id: id).any?
   end
 end

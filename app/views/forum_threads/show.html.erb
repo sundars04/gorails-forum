@@ -3,8 +3,11 @@
   
   
   <%= render @forum_thread.forum_posts %>
+  <div id="forum_thread_<%= @forum_thread.id %>_likes">
+    <%= render partial: "likes", locals: {forum_thread: @forum_thread} %>
+  </div>
 
   <hr />
   <%= render partial: "forum_posts/form" %>
-    
+      
 </div>

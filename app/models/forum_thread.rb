@@ -13,6 +13,7 @@ class ForumThread < ApplicationRecord
   belongs_to :user
   has_many :forum_posts, inverse_of: :forum_thread
   has_many :users, through: :forum_posts
+  has_many :likes
 
   accepts_nested_attributes_for :forum_posts,
                                 reject_if: proc { |attributes| attributes[:body].blank? },
